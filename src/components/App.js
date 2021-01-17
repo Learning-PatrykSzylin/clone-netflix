@@ -6,9 +6,7 @@ import { loadMovies } from "../redux/actions/movieActions";
 
 function App({ movies, loadMovies }) {
   useEffect(() => {
-    loadMovies({
-      title: "testMovie",
-    });
+    loadMovies();
   }, []);
 
   return (
