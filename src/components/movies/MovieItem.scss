@@ -1,0 +1,21 @@
+.slider {
+  &-item {
+    margin-right: 5px;
+    cursor: pointer;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+  // &-item {
+  //   max-width: 300px;
+  //   position: relative;
+  //   padding-right: (192/341) * 100%;
+  //   width: 100%;
+
+  //   img {
+  //     position: absolute;
+  //     width: 100%;
+  //   }
+  // }
+}

@@ -1,30 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
+import { GlobalProvider, GlobalContext } from "../context/GlobalState";
+import MovieRow from "../components/movies/MovieRow";
+import Banner from "../components/banner/Banner";
+import PreviewModal from "./common/PreviewModal";
 
-// Redux
-import { connect } from "react-redux";
-import { loadMovies } from "../redux/actions/movieActions";
-
-function App({ movies, loadMovies }) {
-  useEffect(() => {
-    loadMovies();
-  }, []);
+function App() {
+  const { seedData } = useContext(GlobalContext);
 
   return (
-    <div>
-      <h1>Movie:</h1>
-      <h2>{movies.length > 0 && movies[0].title}</h2>
-    </div>
+    <GlobalProvider>
+      <section>
+        <Banner />
+        <PreviewModal />
+        {seedData.map((movies, index) => (
+          <MovieRow key={`key-${index.toString()}`} movies={movies} />
+        ))}
+      </section>
+    </GlobalProvider>
   );
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    movies: state.movies,
-  };
-};
-
-const mapDispatchToProps = {
-  loadMovies,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
