@@ -6,23 +6,22 @@ import MovieRow from "./MovieRow";
 function MovieContainer() {
   const {
     seedData,
-    selectedMovie,
-    requestedMovie,
-    requestedTargetElement,
+    selectedCard,
+    requestedCard,
     clearRequestedMovie,
     openModal,
     selectMovie,
   } = useContext(GlobalContext);
 
   useEffect(() => {
-    if (selectedMovie == null && requestedMovie) {
-      selectMovie(requestedTargetElement, requestedMovie);
+    if (selectedCard.movie == null && requestedCard.movie) {
+      selectMovie(requestedCard.targetElement, requestedCard.movie);
       clearRequestedMovie();
       openModal();
-    } else if (selectedMovie) {
+    } else if (selectedCard.movie) {
       openModal();
     }
-  }, [selectedMovie]);
+  }, [selectedCard.movie]);
 
   return (
     <>

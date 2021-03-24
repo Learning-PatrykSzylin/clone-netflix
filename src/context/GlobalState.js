@@ -4,12 +4,18 @@ import seedData from "../utils/seed";
 
 const initialState = {
   seedData,
-  selectedMovie: null,
-  targetElement: null,
+  selectedCard: {
+    movie: null,
+    targetElement: null,
+  },
+  // This is gets populated when user hovers on a movie
+  // but the selectedCard.movie is not null
+  requestedCard: {
+    movie: null,
+    targetElement: null,
+  },
   // Action -> opening, closing
   isModalActionInProgress: false,
-  requestedMovie: null, // This is gets populated when user hovers on a movie
-  requestedTargetElement: null,
 };
 
 export const GlobalContext = createContext(initialState);
@@ -44,8 +50,8 @@ export const GlobalProvider = ({ children }) => {
   }
 
   function selectMovie(targetElement, movie) {
-    if (state.selectedMovie) {
-      if (state.selectedMovie.id !== movie.id) {
+    if (state.selectedCard.movie) {
+      if (state.selectedCard.movie.id !== movie.id) {
         dispatch({
           type: "SELECT_REQUESTED_MOVIE",
           payload: { movie, targetElement },
@@ -67,11 +73,9 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         seedData: state.seedData,
-        selectedMovie: state.selectedMovie,
-        targetElement: state.targetElement,
+        selectedCard: state.selectedCard,
         isModalActionInProgress: state.isModalActionInProgress,
-        requestedMovie: state.requestedMovie,
-        requestedTargetElement: state.requestedTargetElement,
+        requestedCard: state.requestedCard,
         openModal,
         closeModal,
         closeModalFinished,

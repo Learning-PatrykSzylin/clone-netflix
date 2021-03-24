@@ -12,18 +12,21 @@ import {
 
 function PreviewModal() {
   const {
-    selectedMovie,
-    targetElement,
+    selectedCard,
     closeModalFinished,
     closeModal,
     isModalActionInProgress,
   } = useContext(GlobalContext);
 
   const getPosition = () => {
-    const position = targetElement
+    const position = selectedCard.targetElement
       ? {
-          x: window.pageXOffset + targetElement.getBoundingClientRect().left,
-          y: window.pageYOffset + targetElement.getBoundingClientRect().top,
+          x:
+            window.pageXOffset +
+            selectedCard.targetElement.getBoundingClientRect().left,
+          y:
+            window.pageYOffset +
+            selectedCard.targetElement.getBoundingClientRect().top,
         }
       : { x: 0, y: 0 };
     return position;
@@ -50,14 +53,19 @@ function PreviewModal() {
         style={{
           left: `${getPosition().x}px`,
           top: `${getPosition().y}px`,
-          width: `${targetElement ? targetElement.width : 0}px`,
+          width: `${
+            selectedCard.targetElement ? selectedCard.targetElement.width : 0
+          }px`,
         }}
       >
         {/* backgroundImage: `url(${
             selectedMovie ? selectedMovie.backdrop_path : ""
           }) */}
         <div className="modal-preview__info">
-          <img src={selectedMovie ? selectedMovie.backdrop_path : ""} alt="" />
+          <img
+            src={selectedCard.movie ? selectedCard.movie.backdrop_path : ""}
+            alt=""
+          />
           <div className="modal-preview__container">
             <div className="modal-preview__controls">
               <PlayCircleFilled />

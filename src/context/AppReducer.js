@@ -13,32 +13,42 @@ const reducer = (state, action) => {
     case "CLOSE_MOVIE_PREVIEW_FINISHED":
       return {
         ...state,
-        selectedMovie: null,
-        targetElement: null,
+        selectedCard: {
+          movie: null,
+          targetElement: null,
+        },
       };
     case "UNSELECT_MOVIE":
       return {
         ...state,
-        selectedMovie: null,
-        targetElement: null,
+        selectedCard: {
+          movie: null,
+          targetElement: null,
+        },
       };
     case "SELECT_MOVIE":
       return {
         ...state,
-        selectedMovie: action.payload.movie,
-        targetElement: action.payload.targetElement,
+        selectedCard: {
+          movie: action.payload.movie,
+          targetElement: action.payload.targetElement,
+        },
       };
     case "SELECT_REQUESTED_MOVIE":
       return {
         ...state,
-        requestedMovie: action.payload.movie,
-        requestedTargetElement: action.payload.targetElement,
+        requestedCard: {
+          movie: action.payload.movie,
+          targetElement: action.payload.targetElement,
+        },
       };
     case "CLEAR_REQUESTED_MOVIE":
       return {
         ...state,
-        requestedMovie: null,
-        requestedTargetElement: null,
+        requestedCard: {
+          movie: null,
+          targetElement: null,
+        },
       };
     default:
       return state;
