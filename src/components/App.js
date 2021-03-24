@@ -1,17 +1,22 @@
 import React from "react";
 import { GlobalProvider } from "../context/GlobalState";
-import Banner from "../components/banner/Banner";
-import PreviewModal from "./common/PreviewModal";
-import MoviesContainer from "./movies/MoviesContainer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Watch from "../pages/Watch";
+import Home from "../pages/Home";
 
 function App() {
   return (
     <GlobalProvider>
-      <section>
-        <Banner />
-        <PreviewModal />
-        <MoviesContainer />
-      </section>
+      <Router>
+        <Switch>
+          <Route path="/watch/:id">
+            <Watch />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </GlobalProvider>
   );
 }

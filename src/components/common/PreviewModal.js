@@ -9,6 +9,9 @@ import {
   ThumbDownOutlined,
   ExpandMoreOutlined,
 } from "@material-ui/icons";
+import EvidenceList from "../moviePreview/evidence/EvidenceList";
+import MetaDataContainer from "../moviePreview/metadata/MetaDataContainer";
+import { Link } from "react-router-dom";
 
 function PreviewModal() {
   const {
@@ -58,34 +61,37 @@ function PreviewModal() {
           }px`,
         }}
       >
-        {/* backgroundImage: `url(${
-            selectedMovie ? selectedMovie.backdrop_path : ""
-          }) */}
-        <div className="modal-preview__info">
-          <img
-            src={selectedCard.movie ? selectedCard.movie.backdrop_path : ""}
-            alt=""
-          />
-          <div className="modal-preview__container">
-            <div className="modal-preview__controls">
-              <PlayCircleFilled />
-              <Check />
-              <ThumbUpOutlined />
-              <ThumbDownOutlined />
-              <ExpandMoreOutlined />
-            </div>
-            <div className="modal-preview__metadata">
-              91% match 18 5 seasons
-            </div>
-            <div className="modal-preview__evidence">
-              <ul>
-                <li>Mind Bending</li>
-                <li>suspensful</li>
-                <li>exicitng</li>
-              </ul>
+        {selectedCard.movie && (
+          <div className="modal-preview__info">
+            <Link to={`/watch/${selectedCard.movie.id}`}>
+              <img
+                src={selectedCard.movie ? selectedCard.movie.backdrop_path : ""}
+                alt=""
+              />
+            </Link>
+
+            <div className="modal-preview__container">
+              <div className="modal-preview__controls">
+                <PlayCircleFilled />
+                <Check />
+                <ThumbUpOutlined />
+                <ThumbDownOutlined />
+                {/* <ExpandMoreOutlined /> */}
+              </div>
+              <div className="modal-preview__metadata">
+                <MetaDataContainer></MetaDataContainer>
+                91% match 18 5 seasons
+              </div>
+              <div className="modal-preview__evidence">
+                <EvidenceList
+                  evidenceItems={
+                    selectedCard.movie && selectedCard.movie.genre_ids
+                  }
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </CSSTransition>
   );

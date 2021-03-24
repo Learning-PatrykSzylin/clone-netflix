@@ -8,6 +8,7 @@
     color: white;
     transform-origin: center;
     border-radius: 5px;
+    cursor: pointer;
 
     & > img {
       cursor: pointer;
@@ -15,7 +16,7 @@
 
     // animation
     &__container {
-      padding: 1rem;
+      padding: 1em;
     }
 
     &__info {
@@ -24,9 +25,31 @@
 
     &__controls {
       display: flex;
+      margin-bottom: 0.5em;
+      // padding: 0.5rem 0;
 
       & > svg {
-        font-size: 3rem;
+        font-size: 2rem;
+
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    &__evidence {
+      .evidence {
+        &-list {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          padding: 0;
+          margin: 0;
+        }
+
+        &-item {
+        }
       }
     }
   }
