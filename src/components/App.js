@@ -1,20 +1,16 @@
-import React, { useContext } from "react";
-import { GlobalProvider, GlobalContext } from "../context/GlobalState";
-import MovieRow from "../components/movies/MovieRow";
+import React from "react";
+import { GlobalProvider } from "../context/GlobalState";
 import Banner from "../components/banner/Banner";
 import PreviewModal from "./common/PreviewModal";
+import MoviesContainer from "./movies/MoviesContainer";
 
 function App() {
-  const { seedData } = useContext(GlobalContext);
-
   return (
     <GlobalProvider>
       <section>
         <Banner />
         <PreviewModal />
-        {seedData.map((movies, index) => (
-          <MovieRow key={`key-${index.toString()}`} movies={movies} />
-        ))}
+        <MoviesContainer />
       </section>
     </GlobalProvider>
   );

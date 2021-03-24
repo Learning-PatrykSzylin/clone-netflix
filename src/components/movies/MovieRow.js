@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import MovieItem from "./MovieItem";
 import "./MovieRow.scss";
 
 function MovieRow({ movies }) {
-  const { openModal, closeModal } = useContext(GlobalContext);
+  const { selectMovie, unselectMovie } = useContext(GlobalContext);
 
   return (
     <section className="sliderContent">
@@ -12,8 +12,8 @@ function MovieRow({ movies }) {
         <MovieItem
           key={`${movie.id.toString()}`}
           movie={movie}
-          onItemHover={openModal}
-          onItemUnselected={closeModal}
+          onItemHover={selectMovie}
+          onItemUnselected={unselectMovie}
         />
       ))}
     </section>

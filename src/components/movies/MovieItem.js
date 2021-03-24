@@ -5,10 +5,10 @@ function MovieItem({ movie, onItemHover, onItemUnselected }) {
   return (
     <div
       className="slider-item"
-      onMouseEnter={(e) => onItemHover(e, movie)}
+      onMouseEnter={(e) => onItemHover(e.target, movie)}
       // onMouseLeave={onItemUnselected}
     >
-      <img src="/lupin-avatar.jpg" alt="" />
+      <img src={movie.backdrop_path} alt="" />
     </div>
   );
 }
