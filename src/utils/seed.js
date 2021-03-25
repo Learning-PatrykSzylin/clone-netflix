@@ -54,7 +54,7 @@ const localData = [
     {
       id: 464055,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",
@@ -71,7 +71,7 @@ const localData = [
     {
       id: 464056,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",
@@ -88,7 +88,7 @@ const localData = [
     {
       id: 464057,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",
@@ -158,7 +158,7 @@ const localData = [
     {
       id: 464055,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",
@@ -175,7 +175,7 @@ const localData = [
     {
       id: 464056,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",
@@ -192,7 +192,7 @@ const localData = [
     {
       id: 464057,
       adult: false,
-      backdrop_path: "/images/lupin-avatar.jpg",
+      backdrop_path: "/lupin-avatar.jpg",
       genre_ids: [14, 28, 12],
       original_language: "en",
       original_title: "Wonder Woman 1984",

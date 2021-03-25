@@ -3,7 +3,7 @@ import { GlobalProvider } from "../context/GlobalState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Watch from "../pages/Watch";
 import Home from "../pages/Home";
-
+import "./App.scss";
 function App() {
   return (
     <GlobalProvider>
