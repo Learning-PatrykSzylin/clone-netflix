@@ -24,11 +24,13 @@ function MovieContainer() {
   }, [selectedCard.movie]);
 
   return (
-    <>
+    <section className="movies-container">
       {seedData.map((movies, index) => (
-        <MovieRow key={`key-${index.toString()}`} movies={movies} />
+        <>
+          <MovieRow key={`key-${index.toString()}`} movies={movies} />
+        </>
       ))}
-    </>
+    </section>
   );
 }
 
