@@ -9,9 +9,11 @@
     transform-origin: center;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 2;
 
-    & > img {
+    img {
       cursor: pointer;
+      width: 100%;
     }
 
     // animation
